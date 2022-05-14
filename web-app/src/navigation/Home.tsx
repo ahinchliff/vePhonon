@@ -272,15 +272,15 @@ const DisplayUserData: React.FC<{
 	updatedData: string | undefined;
 	accountConnected: boolean;
 }> = (props) => {
-	if (!props.accountConnected) {
-		return <span>-</span>;
-	}
-
-	if (!props.currentData) {
+	if (props.accountConnected && !props.currentData) {
 		return <span>Loading...</span>;
 	}
 
-	if (props.updatedData) {
+	if (!props.updatedData && !props.currentData) {
+		return <span>-</span>;
+	}
+
+	if (props.updatedData && props.currentData) {
 		return (
 			<div className="grid grid-cols-3">
 				<div className="text-left">{props.currentData}</div>
@@ -288,6 +288,10 @@ const DisplayUserData: React.FC<{
 				<div className="text-right">{props.updatedData}</div>
 			</div>
 		);
+	}
+
+	if (!props.currentData && props.updatedData) {
+		return <span>{props.updatedData}</span>;
 	}
 
 	return <span>{props.currentData}</span>;
