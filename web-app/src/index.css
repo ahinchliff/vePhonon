@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html {
+		@apply text-white;
+	}
+}
+
+@layer utilities {
+	.phonon-bg-gradient {
+		@apply bg-gradient-to-tr from-pink-300 via-indigo-300 to-teal-300;
+	}
+
+	.phonon-text-gradient {
+		@apply phonon-bg-gradient font-black text-transparent bg-clip-text;
+	}
+}
+
+body {
+	@apply bg-cover bg-phonon-wave;
+}

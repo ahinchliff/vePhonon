@@ -1,0 +1,72 @@
+{
+	"name": "@vePhonon/web-app",
+	"version": "0.1.0",
+	"private": false,
+	"dependencies": {
+		"@tailwindcss/forms": "^0.5.1",
+		"@testing-library/jest-dom": "^5.14.1",
+		"@testing-library/react": "^13.0.0",
+		"@testing-library/user-event": "^13.2.1",
+		"@typechain/ethers-v5": "^10.0.0",
+		"@types/jest": "^27.0.1",
+		"@types/node": "^16.7.13",
+		"@types/react": "^18.0.0",
+		"@types/react-dom": "^18.0.0",
+		"assert": "^2.0.0",
+		"buffer": "^6.0.3",
+		"classnames": "^2.3.1",
+		"crypto-browserify": "^3.12.0",
+		"ethers": "^5.5.4",
+		"https-browserify": "^1.0.0",
+		"os-browserify": "^0.3.0",
+		"prettier": "^2.6.2",
+		"process": "^0.11.10",
+		"react": "^18.0.0",
+		"react-dom": "^18.0.0",
+		"react-router-dom": "^6.3.0",
+		"react-scripts": "5.0.1",
+		"react-toastify": "^9.0.1",
+		"sass": "^1.51.0",
+		"stream-browserify": "^3.0.0",
+		"stream-http": "^3.2.0",
+		"typescript": "^4.4.2",
+		"url": "^0.11.0",
+		"wagmi": "^0.3.2",
+		"web-vitals": "^2.1.0"
+	},
+	"scripts": {
+		"start": "react-app-rewired start",
+		"build": "react-app-rewired build",
+		"test": "react-app-rewired test",
+		"eject": "react-scripts eject",
+		"postinstall": "yarn generate-contract-types",
+		"build-ts": "tsc --build",
+		"generate-contract-types": "typechain --target ethers-v5 --out-dir ./src/contracts './src/abis/*.json'",
+		"format": "prettier --write './'"
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"autoprefixer": "^10.4.7",
+		"postcss": "^8.4.13",
+		"react-app-rewired": "^2.2.1",
+		"tailwindcss": "^3.0.24",
+		"typechain": "^8.0.0"
+	}
+}
