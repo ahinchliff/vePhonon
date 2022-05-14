@@ -10,7 +10,6 @@ artifacts
 build
 
 # web-app
-/web-app/src/abis
 /web-app/src/contracts
 
 # misc
